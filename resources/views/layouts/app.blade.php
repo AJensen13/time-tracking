@@ -5,10 +5,10 @@
 
         <title>App Name - @yield('title')</title>
 
-        <link href="{{ mix('/css/app.css') }}">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
+        <div class="container mx-auto px-4">
             @yield('content')
         </div>
     </body>
