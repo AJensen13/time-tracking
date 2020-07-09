@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 	return view('auth');
-});
-
-Route::auth();
+})->name('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('projects', 'ProjectController');
+    Route::resource('projects', 'ProjectController');
 
-Route::resource('tasks', 'TaskController');
+    Route::resource('tasks', 'TaskController');
+});
