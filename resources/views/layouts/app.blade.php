@@ -107,7 +107,7 @@
 
         </nav>
 
-        <div class="container w-full mx-auto pt-20 flex-grow">
+        <div id="app" class="container w-full mx-auto pt-20 flex-grow">
             <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
                 @yield('content')
             </div>
@@ -118,6 +118,8 @@
                 <span class="w-full text-center text-gray-100">Task Manager</span>
             </div>
         </footer>
+
+        <script src="{{ asset('js/app.js') }}"></script>
 
         <script>
 
