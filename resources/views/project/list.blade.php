@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="flex justify-end my-4 mx-4">
-        <add-model-button></add-model-button>
+        <add-model-button
+            modal-id="test"
+        ></add-model-button>
     </div>
 
     <div class="flex flex-wrap">

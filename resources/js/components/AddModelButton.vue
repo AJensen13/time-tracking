@@ -6,9 +6,12 @@
 
 <script>
     export default {
+        props: [
+            'modalId'
+        ],
         methods: {
             reveal: function() {
-                console.log(reveal);
+                console.log(this.modalId);
             }
         }
     }

@@ -1915,20 +1915,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['modalId'],
   methods: {
-    reveal: function (_reveal) {
-      function reveal() {
-        return _reveal.apply(this, arguments);
-      }
-
-      reveal.toString = function () {
-        return _reveal.toString();
-      };
-
-      return reveal;
-    }(function () {
-      console.log(reveal);
-    })
+    reveal: function reveal() {
+      console.log(this.modalId);
+    }
   }
 });
 
