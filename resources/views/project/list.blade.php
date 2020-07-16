@@ -9,12 +9,17 @@
 
     <div class="flex justify-center">
         <div id="test" class="w-1/2 absolute top-1/4 bg-black border border-green-400 rounded shadow px-2 py-4">
-            <h3 class="text-white pl-4 text-2xl">Create Project</h3>
+            <div class="flex justify-between items-center">
+                <h3 class="text-white pl-4 text-2xl">Create Project</h3>
+                <close-modal
+                    modal-id="test"
+                ></close-modal>
+              </div>
 
             <hr class="border-b-1 border-grey-dark mt-2 mb-8 mx-4">
 
-            <form id="createModel" class="w-full flex flex-col items-center">
-                <input class="pl-4 py-2 mb-4 rounded-sm md:w-1/2" type="text" name="name" placeholder="Project Name" required>
+            <form id="createModel" class="w-2/3 flex mx-auto flex-col items-center">
+                <input class="pl-4 py-2 mb-4 rounded-sm w-full" type="text" name="name" placeholder="Project Name" required>
 
                 <form-submit-button
                     form-id="createModel"

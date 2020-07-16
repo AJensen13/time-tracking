@@ -1,5 +1,5 @@
 <template>
-    <button @click="submit" class="rounded-sm bg-blue-800 p-3 md:w-1/5">
+    <button @click="submit" class="rounded-sm bg-blue-800 p-3 md:w-1/4 self-end">
         <i class="fas fa-save fa-lg text-white"> Submit</i>
     </button>
 </template>
