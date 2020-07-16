@@ -22,7 +22,7 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::resource('projects', 'ProjectController');
+    Route::resource('projects', 'ProjectController')->except(['create', 'edit']);
 
-    Route::resource('tasks', 'TaskController');
+    Route::resource('tasks', 'TaskController')->except(['create', 'edit']);
 });
