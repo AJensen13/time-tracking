@@ -11,7 +11,7 @@
         ],
         methods: {
             reveal: function() {
-                console.log(this.modalId);
+                document.getElementById(this.modalId).classList.remove('hidden');
             }
         }
     }

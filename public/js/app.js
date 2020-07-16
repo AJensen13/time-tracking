@@ -1918,7 +1918,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['modalId'],
   methods: {
     reveal: function reveal() {
-      console.log(this.modalId);
+      document.getElementById(this.modalId).classList.remove('hidden');
     }
   }
 });
@@ -1946,7 +1946,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['modalId'],
   methods: {
     close: function close() {
-      console.log(this.modalId);
+      document.getElementById(this.modalId).classList.add('hidden');
     }
   }
 });

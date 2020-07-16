@@ -8,7 +8,7 @@
     </div>
 
     <div class="flex justify-center">
-        <div id="test" class="w-1/2 absolute top-1/4 bg-black border border-green-400 rounded shadow px-2 py-4">
+        <div id="test" class="w-1/2 absolute top-1/4 bg-black border border-green-400 rounded shadow px-2 py-4 hidden">
             <div class="flex justify-between items-center">
                 <h3 class="text-white pl-4 text-2xl">Create Project</h3>
                 <close-modal
