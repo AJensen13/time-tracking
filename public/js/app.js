@@ -1918,7 +1918,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ['modalId'],
   methods: {
     reveal: function reveal() {
-      document.getElementById(this.modalId).classList.remove('hidden');
+      document.getElementById(this.modalId).classList.toggle('hidden');
+      document.getElementById('body').classList.toggle('bg-gray-500 bg-opacity-50');
     }
   }
 });
@@ -1946,7 +1947,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['modalId'],
   methods: {
     close: function close() {
-      document.getElementById(this.modalId).classList.add('hidden');
+      document.getElementById(this.modalId).classList.toggle('hidden');
     }
   }
 });

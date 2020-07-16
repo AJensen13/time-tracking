@@ -13,7 +13,7 @@
         ],
         methods: {
             close: function() {
-                document.getElementById(this.modalId).classList.add('hidden');
+                document.getElementById(this.modalId).classList.toggle('hidden');
             }
         }
     }

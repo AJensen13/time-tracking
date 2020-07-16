@@ -8,24 +8,26 @@
     </div>
 
     <div class="flex justify-center">
-        <div id="test" class="w-1/2 absolute top-1/4 bg-black border border-green-400 rounded shadow px-2 py-4 hidden">
-            <div class="flex justify-between items-center">
-                <h3 class="text-white pl-4 text-2xl">Create Project</h3>
-                <close-modal
-                    modal-id="test"
-                ></close-modal>
-              </div>
+        <div id="test" class="w-full h-full bg-gray-400 bg-opacity-50 hidden fixed top-0 left-0">
+            <div  class="w-1/2 bg-black border border-green-400 absolute top-1/4 left-1/4 rounded shadow px-2 py-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-white pl-4 text-2xl">Create Project</h3>
+                    <close-modal
+                        modal-id="test"
+                    ></close-modal>
+                  </div>
 
-            <hr class="border-b-1 border-grey-dark mt-2 mb-8 mx-4">
+                <hr class="border-b-1 border-grey-dark mt-2 mb-8 mx-4">
 
-            <form id="createModel" class="w-2/3 flex mx-auto flex-col items-center">
-                <input class="pl-4 py-2 mb-4 rounded-sm w-full" type="text" name="name" placeholder="Project Name" required>
+                <form id="createModel" class="w-2/3 flex mx-auto flex-col items-center">
+                    <input class="pl-4 py-2 mb-4 rounded-sm w-full" type="text" name="name" placeholder="Project Name" required>
 
-                <form-submit-button
-                    form-id="createModel"
-                    submit="{{ route('projects.store') }}"
-                ></form-submit-button>
-            </form>
+                    <form-submit-button
+                        form-id="createModel"
+                        submit="{{ route('projects.store') }}"
+                    ></form-submit-button>
+                </form>
+            </div>
         </div>
     </div>
 

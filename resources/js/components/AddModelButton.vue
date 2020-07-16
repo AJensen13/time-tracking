@@ -11,7 +11,8 @@
         ],
         methods: {
             reveal: function() {
-                document.getElementById(this.modalId).classList.remove('hidden');
+                document.getElementById(this.modalId).classList.toggle('hidden');
+                document.getElementById('body').classList.toggle('bg-gray-500 bg-opacity-50');
             }
         }
     }
