@@ -20,6 +20,8 @@
                 <hr class="border-b-1 border-grey-dark mt-2 mb-8 mx-4">
 
                 <form id="createModel" class="w-2/3 flex mx-auto flex-col items-center">
+                    @csrf
+
                     <input class="pl-4 py-2 mb-4 rounded-sm w-full" type="text" name="name" placeholder="Project Name" required>
 
                     <form-submit-button
