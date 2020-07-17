@@ -1973,7 +1973,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['formId'],
   methods: {
     submit: function submit() {
-      console.log(this.formId);
+      var form = document.getElementById(this.formId);
     }
   }
 });
@@ -22787,6 +22787,19 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-axios/dist/vue-axios.min.js":
+/*!******************************************************!*\
+  !*** ./node_modules/vue-axios/dist/vue-axios.min.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o};!function(){function o(e,t){if(!o.installed){if(o.installed=!0,!t)return void console.error("You have to install axios");e.axios=t,Object.defineProperties(e.prototype,{axios:{get:function(){return t}},$http:{get:function(){return t}}})}}"object"==( false?undefined:_typeof(exports))?module.exports=o: true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function(){return o}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined}();
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AddModelButton.vue?vue&type=template&id=6f51aaf6&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AddModelButton.vue?vue&type=template&id=6f51aaf6& ***!
@@ -22805,7 +22818,8 @@ var render = function() {
   return _c(
     "button",
     {
-      staticClass: "w-16 h-16 rounded-md bg-green-400",
+      staticClass:
+        "w-16 h-16 transition duration-100 ease-linear rounded-md bg-green-400 transform hover:scale-105",
       on: { click: _vm.reveal }
     },
     [_c("i", { staticClass: "fas fa-plus fa-2x text-white" })]
@@ -22836,7 +22850,8 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "modal-close cursor-pointer z-50 pr-4",
+      staticClass:
+        "modal-close cursor-pointer z-50 pr-4 transition duration-100 ease-linear transform hover:scale-125",
       on: { click: _vm.close }
     },
     [
@@ -22888,7 +22903,8 @@ var render = function() {
   return _c(
     "button",
     {
-      staticClass: "rounded-sm bg-blue-800 p-3 md:w-1/4 self-end",
+      staticClass:
+        "transition duration-100 ease-linear rounded-sm bg-blue-800 p-3 md:w-1/4 self-end transform hover:scale-105",
       on: { click: _vm.submit }
     },
     [
@@ -35126,14 +35142,21 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-axios */ "./node_modules/vue-axios/dist/vue-axios.min.js");
+/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_axios__WEBPACK_IMPORTED_MODULE_2__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+
+
 Vue.component('project-tab', __webpack_require__(/*! ./components/ProjectTab.vue */ "./resources/js/components/ProjectTab.vue")["default"]);
 Vue.component('add-model-button', __webpack_require__(/*! ./components/AddModelButton.vue */ "./resources/js/components/AddModelButton.vue")["default"]);
 Vue.component('form-submit-button', __webpack_require__(/*! ./components/FormSubmitButton.vue */ "./resources/js/components/FormSubmitButton.vue")["default"]);
 Vue.component('close-modal', __webpack_require__(/*! ./components/CloseModal.vue */ "./resources/js/components/CloseModal.vue")["default"]);
+Vue.use(vue_axios__WEBPACK_IMPORTED_MODULE_2___default.a, axios__WEBPACK_IMPORTED_MODULE_1___default.a);
 var app = new Vue({
   el: '#app'
 });

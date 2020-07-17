@@ -1,5 +1,5 @@
 <template>
-    <button @click="reveal" class="w-16 h-16 rounded-md bg-green-400">
+    <button @click="reveal" class="w-16 h-16 transition duration-100 ease-linear rounded-md bg-green-400 transform hover:scale-105">
         <i class="fas fa-plus fa-2x text-white"></i>
     </button>
 </template>

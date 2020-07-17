@@ -1,5 +1,5 @@
 <template>
-    <button @click="submit" class="rounded-sm bg-blue-800 p-3 md:w-1/4 self-end">
+    <button @click="submit" class="transition duration-100 ease-linear rounded-sm bg-blue-800 p-3 md:w-1/4 self-end transform hover:scale-105">
         <i class="fas fa-save fa-lg text-white"> Submit</i>
     </button>
 </template>
@@ -11,7 +11,8 @@
         ],
         methods: {
             submit: function() {
-                console.log(this.formId);
+                let form = document.getElementById(this.formId);
+
             }
         }
     }
