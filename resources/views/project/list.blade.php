@@ -26,7 +26,7 @@
 
                     <form-submit-button
                         form-id="createModel"
-                        submit="{{ route('projects.store') }}"
+                        submit-url="{{ route('projects.store') }}"
                     ></form-submit-button>
                 </form>
             </div>

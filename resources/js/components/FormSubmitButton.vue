@@ -1,5 +1,5 @@
 <template>
-    <button @click="submit" class="transition duration-100 ease-linear rounded-sm bg-blue-800 p-3 md:w-1/4 self-end transform hover:scale-105">
+    <button @click="submit()" type="button" class="transition duration-100 ease-linear rounded-sm bg-blue-800 p-3 md:w-1/4 self-end transform hover:scale-105">
         <i class="fas fa-save fa-lg text-white"> Submit</i>
     </button>
 </template>
@@ -7,12 +7,21 @@
 <script>
     export default {
         props: [
-            'formId'
+            'formId',
+            'submitUrl'
         ],
         methods: {
             submit: function() {
-                let form = document.getElementById(this.formId);
+                let data = $('#' + this.formId).serializeArray().reduce(function(obj, item) {
+                    obj[item.name] = item.value;
+                    return obj;
+                }, {});
 
+                console.log(data);
+
+                // this.axios.post(this.submitUrl, data)
+                //     .then()
+                //     .catch();
             }
         }
     }

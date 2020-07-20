@@ -11,8 +11,8 @@
         ],
         methods: {
             reveal: function() {
-                document.getElementById(this.modalId).classList.toggle('hidden');
-                document.getElementById('body').classList.toggle('bg-gray-500 bg-opacity-50');
+                $('#' + this.modalId).toggleClass('hidden');
+                $('#body').toggleClass(['bg-gray-500', 'bg-opacity-50']);
             }
         }
     }
