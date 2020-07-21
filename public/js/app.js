@@ -1977,9 +1977,20 @@ __webpack_require__.r(__webpack_exports__);
         obj[item.name] = item.value;
         return obj;
       }, {});
-      console.log(data); // this.axios.post(this.submitUrl, )
-      //     .then()
-      //     .catch();
+      this.axios.post(this.submitUrl, data).then(function (response) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Noice!',
+          text: 'Project saved!'
+        });
+        location.reload();
+      })["catch"](function (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'shoot',
+          text: error.response.data.message
+        });
+      });
     }
   }
 });
@@ -33833,12 +33844,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "w-full md:w-1/2 xl:w-1/3 p-3", on: { click: _vm.show } },
+    {
+      staticClass: "cursor-pointer w-full md:w-1/2 xl:w-1/3 p-3",
+      on: { click: _vm.show }
+    },
     [
       _c(
         "div",
         {
-          staticClass: "bg-black border border-grey-darkest rounded shadow p-2"
+          staticClass:
+            "bg-black border border-grey-darkest rounded shadow p-2 hover:border-green-400"
         },
         [
           _c("div", { staticClass: "flex flex-row items-center" }, [
@@ -46053,6 +46068,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 window.$ = jquery__WEBPACK_IMPORTED_MODULE_4___default.a;
+window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a;
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('project-tab', __webpack_require__(/*! ./components/ProjectTab.vue */ "./resources/js/components/ProjectTab.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('add-model-button', __webpack_require__(/*! ./components/AddModelButton.vue */ "./resources/js/components/AddModelButton.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('form-submit-button', __webpack_require__(/*! ./components/FormSubmitButton.vue */ "./resources/js/components/FormSubmitButton.vue")["default"]);

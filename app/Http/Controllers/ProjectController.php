@@ -27,10 +27,15 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        Project::create([
-            'name' => $request->name,
+        $request->validate([
+            'name' => 'required|string'
         ]);
+
+        $project = new Project;
+        $project->name = $request->name;
+        $project->save();
+
+        return response(200);
     }
 
     /**

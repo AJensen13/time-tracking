@@ -17,11 +17,23 @@
                     return obj;
                 }, {});
 
-                console.log(data);
+                this.axios.post(this.submitUrl, data)
+                    .then(function(response) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Noice!',
+                            text: 'Project saved!',
+                        });
 
-                // this.axios.post(this.submitUrl, data)
-                //     .then()
-                //     .catch();
+                        location.reload();
+                    })
+                    .catch(function(error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'shoot',
+                            text: error.response.data.message
+                        });
+                    });
             }
         }
     }
