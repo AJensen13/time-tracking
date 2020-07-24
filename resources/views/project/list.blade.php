@@ -1,19 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-end my-4 mx-4">
-        <add-model-button
-            modal-id="test"
-        ></add-model-button>
+    <div class="px-8 mb-8">
+        <h2 class="text-4xl text-white mb-2">Projects</h2>
+        <hr>
     </div>
 
     <div class="flex justify-center">
-        <div id="test" class="w-full h-full bg-gray-400 bg-opacity-50 hidden fixed top-0 left-0">
+        <div id="addProject" class="w-full h-full bg-gray-400 bg-opacity-50 hidden fixed top-0 left-0">
             <div  class="w-1/2 bg-black border border-green-400 absolute top-1/4 left-1/4 rounded shadow px-2 py-4">
                 <div class="flex justify-between items-center">
                     <h3 class="text-white pl-4 text-2xl">Create Project</h3>
                     <close-modal
-                        modal-id="test"
+                        modal-id="addProject"
                     ></close-modal>
                   </div>
 
@@ -33,7 +32,7 @@
         </div>
     </div>
 
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap px-8">
         @foreach($projects as $project)
 
             <project-tab
@@ -43,5 +42,15 @@
             ></project-tab>
 
         @endforeach
+    </div>
+@endsection
+
+@section('button-bar')
+    <div class="flex-none w-1/12">
+        <div class="flex justify-center mt-12">
+            <add-model-button
+                modal-id="addProject"
+            ></add-model-button>
+        </div>
     </div>
 @endsection

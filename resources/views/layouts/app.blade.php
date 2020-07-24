@@ -108,10 +108,12 @@
         </nav>
 
         <div id="app" class="flex-grow">
-            <div class="container w-full mx-auto pt-20">
-                <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+            <div class="flex pt-20 px-8">
+                <div class="flex-grow px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
                     @yield('content')
                 </div>
+
+                @yield('button-bar')
             </div>
         </div>
 
