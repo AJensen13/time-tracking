@@ -15,7 +15,7 @@
         @foreach($project->tasks as $task)
             <task-tab
                 name="{{ $task->name }}"
-                time-worked="2"
+                time-worked="{{ $task->hoursWorked() }}"
                 redirect="{{ route('tasks.show', ['task' => $task]) }}"
             ></task-tab>
         @endforeach

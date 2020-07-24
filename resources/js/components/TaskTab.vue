@@ -4,7 +4,7 @@
             <div class="flex flex-row items-center">
                 <div class="flex-1 text-right text-white md:text-center">
                     <h5 class="uppercase">{{ name }}</h5>
-                    <p>{{ timeWorked }}</p>
+                    <p>{{ timeWorked }} hours worked</p>
                 </div>
             </div>
         </div>
