@@ -2,9 +2,61 @@
 
 @section('content')
     <div class="px-8 mb-8">
-        <h2 class="text-4xl text-white mb-2">Projects</h2>
+        <h2 class="text-4xl text-white mb-2">{{ $activeProjects->count() }} Active Projects</h2>
         <hr>
     </div>
+
+    <div class="flex flex-wrap px-8 mb-8">
+        @foreach($activeProjects as $project)
+
+            <project-tab
+                name="{{ $project->name }}"
+                count="{{ $project->tasks()->count() }}"
+                redirect="{{ route('projects.show', ['project' => $project]) }}"
+            ></project-tab>
+
+        @endforeach
+    </div>
+
+
+    @if($completedProjects->count() > 0)
+        <div class="px-8 mb-8">
+            <h2 class="text-4xl text-white mb-2">{{ $completedProjects->count() }} Completed Projects</h2>
+            <hr>
+        </div>
+
+        <div class="flex flex-wrap px-8 mb-8">
+            @foreach($completedProjects as $project)
+
+                <project-tab
+                    name="{{ $project->name }}"
+                    count="{{ $project->tasks()->count() }}"
+                    redirect="{{ route('projects.show', ['project' => $project]) }}"
+                ></project-tab>
+
+            @endforeach
+        </div>
+    @endif
+
+
+    @if($archivedProjects->count() > 0)
+        <div class="px-8 mb-8">
+            <h2 class="text-4xl text-white mb-2">{{ $archivedProjects->count() }} Archived Projects</h2>
+            <hr>
+        </div>
+
+        <div class="flex flex-wrap px-8">
+            @foreach($archivedProjects as $project)
+
+                <project-tab
+                    name="{{ $project->name }}"
+                    count="{{ $project->tasks()->count() }}"
+                    redirect="{{ route('projects.show', ['project' => $project]) }}"
+                ></project-tab>
+
+            @endforeach
+        </div>
+    @endif
 
     <div class="flex justify-center">
         <div id="addProject" class="w-full h-full bg-gray-400 bg-opacity-50 hidden fixed top-0 left-0">
@@ -30,18 +82,6 @@
                 </form>
             </div>
         </div>
-    </div>
-
-    <div class="flex flex-wrap px-8">
-        @foreach($projects as $project)
-
-            <project-tab
-                name="{{ $project->name }}"
-                count="{{ $project->tasks()->count() }}"
-                redirect="{{ route('projects.show', ['project' => $project]) }}"
-            ></project-tab>
-
-        @endforeach
     </div>
 @endsection
 

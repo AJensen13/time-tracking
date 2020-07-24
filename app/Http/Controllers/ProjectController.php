@@ -14,9 +14,13 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $activeProjects = Project::whereNull('completed')->get();
 
-        return view('project.list', compact('projects'));
+        $completedProjects = Project::whereNotNull('completed')->get();
+
+        $archivedProjects = Project::onlyTrashed()->get();
+
+        return view('project.list', compact('activeProjects', 'completedProjects', 'archivedProjects'));
     }
 
     /**
