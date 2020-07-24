@@ -3,8 +3,8 @@
         <div class="bg-black border border-grey-darkest rounded shadow p-2 hover:border-green-400">
             <div class="flex flex-row items-center">
                 <div class="flex-1 text-right text-white md:text-center">
-                    <h5 class="uppercase">{{ name }}</h5>
-                    <p>{{ timeWorked }} hours worked</p>
+                    <h5 class="uppercase mb-1">{{ name }}</h5>
+                    <p>{{ timeWorked }} hours logged</p>
                 </div>
             </div>
         </div>

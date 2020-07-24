@@ -33946,11 +33946,11 @@ var render = function() {
               "div",
               { staticClass: "flex-1 text-right text-white md:text-center" },
               [
-                _c("h5", { staticClass: "uppercase" }, [
+                _c("h5", { staticClass: "uppercase mb-1" }, [
                   _vm._v(_vm._s(_vm.name))
                 ]),
                 _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(_vm.timeWorked))])
+                _c("p", [_vm._v(_vm._s(_vm.timeWorked) + " hours logged")])
               ]
             )
           ])

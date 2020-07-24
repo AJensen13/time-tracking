@@ -12,8 +12,8 @@ class Task extends Model
         'completed'
     ];
 
-    public function hoursWorked() {
-        return ($this->minutes / 60);
+    public function hoursLogged() {
+        return (number_format(($this->hasMany('App\TimeLog')->sum('minutes') / 60), 2));
     }
 
     public function logs() {

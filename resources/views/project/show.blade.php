@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="mb-5">
+    <div class="mb-5 flex justify-between">
         <h2 class="text-6xl text-white pl-3">{{ ucfirst($project->name) }}<h2>
+        <p class="text-6xl text-white pr-3">{{ $project->hoursLogged() }} hrs total</p>
     </div>
 
     <hr>
@@ -15,7 +16,7 @@
         @foreach($project->tasks as $task)
             <task-tab
                 name="{{ $task->name }}"
-                time-worked="{{ $task->hoursWorked() }}"
+                time-worked="{{ $task->hoursLogged() }}"
                 redirect="{{ route('tasks.show', ['task' => $task]) }}"
             ></task-tab>
         @endforeach
