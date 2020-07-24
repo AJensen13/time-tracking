@@ -16,7 +16,10 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->boolean('active')->default(true);
+            $table->timestamp('completed')->nullable()->default(null);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
