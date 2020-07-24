@@ -14,7 +14,7 @@
                     <close-modal
                         modal-id="addProject"
                     ></close-modal>
-                  </div>
+                </div>
 
                 <hr class="border-b-1 border-grey-dark mt-2 mb-8 mx-4">
 
