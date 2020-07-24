@@ -1,13 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
-        <h2 class="text-6xl text-white">{{ ucfirst($project->name) }}<h2>
+    <div class="mb-5">
+        <h2 class="text-6xl text-white pl-3">{{ ucfirst($project->name) }}<h2>
     </div>
 
     <hr>
 
-    <div class="flex flex-wrap">
-        
+    <h3 class="py-1 pl-3 text-white text-3xl">{{ count($project->tasks) }} Active Tasks</h3>
+
+    <hr>
+
+    <div class="flex flex-wrap mt-4">
+        @foreach($project->tasks as $task)
+            <task-tab
+                name="{{ $task->name }}"
+                time-worked="2"
+                redirect="{{ route('tasks.show', ['task' => $task]) }}"
+            ></task-tab>
+        @endforeach
     </div>
 @endsection

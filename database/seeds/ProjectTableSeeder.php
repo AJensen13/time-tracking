@@ -11,6 +11,10 @@ class ProjectTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Project::class, 3)->create();
+        factory(App\Project::class, 3)->create()->each(function ($project) {
+            $project->tasks()->save(factory(App\Task::class)->make());
+            $project->tasks()->save(factory(App\Task::class)->make());
+            $project->tasks()->save(factory(App\Task::class)->make());
+        });
     }
 }

@@ -10,6 +10,7 @@ window.$ = Jquery;
 window.Swal = Swal;
 
 Vue.component('project-tab', require('./components/ProjectTab.vue').default);
+Vue.component('task-tab', require('./components/TaskTab.vue').default);
 Vue.component('add-model-button', require('./components/AddModelButton.vue').default);
 Vue.component('form-submit-button', require('./components/FormSubmitButton.vue').default);
 Vue.component('close-modal', require('./components/CloseModal.vue').default);
