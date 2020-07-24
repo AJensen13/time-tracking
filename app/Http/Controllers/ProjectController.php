@@ -46,7 +46,8 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        dd($project);
+        $project->with();
+        return view('project.show', compact('project'));
     }
 
     /**
